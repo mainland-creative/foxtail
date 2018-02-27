@@ -1,0 +1,21 @@
+.Container {
+  height: 400px;
+  width: 100%;
+  background-color: #F2EAE9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 75%;
+}
+
+.Label {
+  font-size: 34px;
+  max-width: 500px;
+}

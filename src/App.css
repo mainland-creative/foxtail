@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Foxtail';
+  src: url('GT-Walsheim-Light2.woff') format('woff');
+}
+
+.App {
+  text-align: center;
+  background-color: #fff;
+  background: #fff;
+  font-family: 'Foxtail', sans-serif;
+}

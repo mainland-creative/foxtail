@@ -1,0 +1,24 @@
+.Home {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.SoundIcon {
+  &--hidden {
+    display: none;
+  }
+  cursor: pointer;
+  position: absolute;
+  color: #fff;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  left: 0;
+  bottom: 0px;
+  z-index: 1000;
+}
+
+video {
+  object-fit: cover;
+}

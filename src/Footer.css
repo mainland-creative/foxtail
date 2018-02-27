@@ -1,0 +1,97 @@
+.Footer {
+  height: 300px;
+  background-color: #242424;
+  display: flex;
+  bottom: 0;
+}
+
+.Label {
+  font-size: 18px;
+  color: #999999;
+  height: 20px;
+}
+
+.Services {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: #242424;
+  flex: 1;
+}
+
+
+.ServicesContact {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: #242424;
+  flex: 1;
+}
+
+.ServicesAddress {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: #242424;
+  flex: 1;
+  padding-left: 30px;
+}
+
+
+.ServicesSocial {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: #242424;
+  flex: 1;
+  padding-left: 20px;
+}
+
+.Body {
+  width: 252px;
+  text-align: justify;
+  color: #fff;
+}
+
+.BodyContact {
+  width: 150px;
+  color: #fff;
+}
+
+.LabelContact {
+  font-size: 18px;
+  color: #999999;
+  height: 20px;
+  padding-bottom: 10px;
+  padding-top: 47px;
+}
+
+.SocialLink {
+  color: #fff;
+}
+
+.RightContainer {
+  height: 100%;
+  display: flex;
+  flex: 2;
+  flex-wrap: wrap;
+  background-color: #242424;
+}
+
+.LeftContainer {
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  background-color: #242424;
+}
+
+.LogoFooter {
+  padding-top: 25px;
+  padding-left: 50px;
+  height: 200px;
+}
+
+

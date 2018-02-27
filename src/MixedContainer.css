@@ -1,0 +1,21 @@
+.MixedContainer {
+  height: 650px;
+}
+
+.LabelMixed {
+  display: flex;
+  justify-content: center;
+  font-size: 34px;
+  max-width: 500px;
+  height: 22%;
+}
+
+.Message {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 18px;
+  height: 30%;
+  padding-left: 100px;
+  padding-right: 100px;
+}
