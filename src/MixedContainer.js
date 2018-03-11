@@ -135,7 +135,8 @@ class MixedContainer extends Component {
       if (messages[0] === "newline") {
         return messages.slice(1).map(m => <div key={m.toString()}>{m}</div>)
       }
-      return messages.map(m => <p key={m.toString()}>{m}</p>)
+
+      return messages.map(m => { if (m) {return <p key={m.toString()}>{m}</p> } })
     }
 
     const buildLabel = function (opts) {
