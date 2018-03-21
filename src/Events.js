@@ -52,8 +52,8 @@ class Events extends Component {
       photoCarousel1,
       textLabel1,
       textMessage1,
-      numberedMessageTop,
-      numberedMessageBottom,
+      whiteLabelContainer1,
+      whiteLabelContainer2,
       numberedPhotoCarousel,
       photoCarousel2,
       textLabel2,
@@ -92,7 +92,7 @@ class Events extends Component {
           label={textLabel1}
           message={textMessage1} />
         <MultiMixedContainer
-          messages={[numberedMessageTop, numberedMessageBottom]}
+          messages={[whiteLabelContainer1, whiteLabelContainer2]}
           images={extractAssetUrls(numberedPhotoCarousel)}
         />
         <PhotoContainer images={extractAssetUrls(photoCarousel2)} />
