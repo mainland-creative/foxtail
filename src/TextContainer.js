@@ -5,7 +5,7 @@ class TextContainer extends Component {
   render () {
     let style = {
       container: {
-        height: "320px",
+        height: "400px",
         width: "100%",
         display: "flex",
         justifyContent: "center",

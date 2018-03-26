@@ -70,7 +70,6 @@ class MultiMixedContainer extends Component {
         justfyContent: "center",
         flexDirection: "column",
         flex: "1",
-        width: "100%",
       },
       images: {
         display: "flex",
@@ -82,44 +81,27 @@ class MultiMixedContainer extends Component {
       label: {
         display: "flex",
         alignItems: "center",
-        fontSize: "70px",
+        fontSize: "90px",
         flex: 1,
         color: "#fff"
       },
       message: {
         fontSize: "18px",
         flex: 1,
-        width: "100%",
         paddingLeft: "20px",
         paddingRight: "20px"
       }
     }
-
-    const buildMessage = function (messages) {
-      if (typeof messages === 'string') {
-        return <p>{messages}</p>
-      }
-      if (messages[0] === "newline") {
-        return messages.slice(1).map(m => <div key={m.toString()}>{m}</div>)
-      }
-
-      return messages.map(m => { if (m) {return <p key={m.toString()}>{m}</p> } })
-    }
-
     return (
       <div style={style.container}>
         <div style={style.stackedBoxes}>
           <div style={{ ...style.box, backgroundColor: "#DDE3E5" }}>
-            <span style={style.label}>{this.props.messages[0].label}</span>
-            <span style={style.message}>
-              {buildMessage(this.props.messages[0].message)}
-            </span>
+            <span style={style.label}>By Day</span>
+            <span style={style.message}>{this.props.messages[0]}</span>
           </div>
           <div style={{ ...style.box, backgroundColor: "#C7D0D4" }}>
-            <span style={style.label}>{this.props.messages[1].label}</span>
-            <span style={style.message}>
-              {buildMessage(this.props.messages[1].message)}
-            </span>
+            <span style={style.label}>By Night</span>
+            <span style={style.message}>{this.props.messages[1]}</span>
           </div>
         </div>
         <div style={{...style.images, backgroundImage: `url(${this.props.images[this.state.imageIdx - 1]})`}}>
