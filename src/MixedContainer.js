@@ -98,13 +98,14 @@ class MixedContainer extends Component {
   render () {
     let LeftStyle = {
       display: "flex",
+      flex: "1",
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
       float: "left",
-      width: "50%",
       height: "650px",
       maxWidth: "100%",
+      minHeight: "650px",
       maxHeight: "100%",
       backgroundColor: "#DDE3E5",
       backgroundRepeat: "no-repeat",
@@ -114,13 +115,14 @@ class MixedContainer extends Component {
 
     let RightStyle = {
       display: "flex",
+      flex: "1",
       justifyContent: "center",
       flexDirection: "column",
       alignItems: "center",
       float: "left",
-      width: "50%",
       height: "650px",
       maxWidth: "100%",
+      minHeight: "650px",
       maxHeight: "100%",
       backgroundColor: "#DDE3E5",
       backgroundRepeat: "no-repeat",

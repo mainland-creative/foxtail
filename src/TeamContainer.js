@@ -13,7 +13,6 @@ class TeamContainer extends Component {
     }
 
     this._resize = this._resize.bind(this)
-    this._setHeight = this._setHeight.bind(this)
   }
 
   componentDidMount () {
@@ -37,42 +36,27 @@ class TeamContainer extends Component {
     })
   }
 
-  _setHeight () {
-    if (this.state.members && this.state.members.length === 0) return 0
-    if (this.state.viewport.width < 1300) {
-      let height = 600
-      if (this.state.members.length > 2) height = 1200
-      if (this.state.members.length > 4) height = 1800
-      if (this.state.members.length > 6) height = 2400
-      return 4000
-    } else {
-      let height = 600
-      if (this.state.members.length > 3) height = 1200
-      if (this.state.members.length > 6) height = 1800
-      return 2500
-    }
-  }
-
   render () {
     const style = {
       container: {
-        height: `${this._setHeight()}px`,
         backgroundColor: "#fff",
         display: "flex",
-        flexDirection: "Column",
+        flexDirection: "row",
       },
-      flexRow: {
+      rowContainer: {
         display: "flex",
         flex: 1,
         justifyContent: "space-around",
         alignItems: "center",
+        flexWrap: "wrap",
       },
       rowItem: {
         display: "flex",
         flexDirection: "column",
-        height: "90%",
+        height: "30em",
         width: "415px",
         minWidth: "350px",
+        marginBottom: "50px"
       },
       itemInfo: {
         fontSize: "34px",
@@ -89,7 +73,7 @@ class TeamContainer extends Component {
         fontColor: "black",
       },
       itemImage: {
-        flex: 4,
+        flex: 1,
         backgroundSize: "cover",
         backgroundPosition: "center"
       },
@@ -111,28 +95,20 @@ class TeamContainer extends Component {
 
     const buildRows = function (members, width) {
       if (members.length === 0) return null
-      const MEMBERS_PER_ROW = width < 1300 ? 2 : 3
 
-      let groups = chunk(members, MEMBERS_PER_ROW)
-      makeFull(groups, MEMBERS_PER_ROW)
-
-      return groups.map((group, idx) => {
-        return (
-          <div style={style.flexRow} key={idx}>
-            {group.map((m, idx) => {
-              return (
-                <div style={style.rowItem} key={idx}>
-                  <div style={{...style.itemImage, backgroundImage: `url(${m.img})`}}></div>
-                  <div style={style.itemInfo}>{m.name}</div>
-                  <div style={style.itemInfoSecondary}>{m.title}</div>
-                </div>
-              )
-             })
-            }
-          </div>
-        )
-      })
-    }
+      return <div style={style.rowContainer}>
+          {members.map((m, idx) => {
+            return (
+              <div style={style.rowItem} key={idx}>
+                <div style={{...style.itemImage, backgroundImage: `url(${m.img})`}}></div>
+                <div style={style.itemInfo}>{m.name}</div>
+                <div style={style.itemInfoSecondary}>{m.title}</div>
+              </div>
+            )
+            })
+          }
+        </div>
+  }
 
     return (
       <div style={style.container}>
