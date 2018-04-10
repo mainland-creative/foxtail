@@ -36,7 +36,7 @@ class TextContainer extends Component {
         display: "flex",
         justifyContent: "center",
         fontSize: "18px",
-        width: "660px",
+        maxWidth: "660px",
       }
     }
 

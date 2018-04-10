@@ -1,5 +1,13 @@
 .MixedContainer {
-  height: 650px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1000px) {
+  .MixedContainer {
+    flex-direction: row;
+    height: 650px;
+  }
 }
 
 .LabelMixed {
@@ -32,12 +40,20 @@ padding-bottom: 90px;
 
 
 .Message {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   flex-direction: column;
   font-size: 18px;
   height: 30%;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
   text-align: left;
+}
+
+@media (min-width: 650px) {
+  .Message {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }

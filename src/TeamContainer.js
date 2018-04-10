@@ -56,6 +56,7 @@ class TeamContainer extends Component {
         height: "30em",
         width: "415px",
         minWidth: "350px",
+        marginBottom: "50px"
       },
       itemInfo: {
         fontSize: "34px",
@@ -107,7 +108,7 @@ class TeamContainer extends Component {
             })
           }
         </div>
-    }
+  }
 
     return (
       <div style={style.container}>
