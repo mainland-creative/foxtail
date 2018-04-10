@@ -60,18 +60,6 @@ class Home extends Component {
 
     return (
       <div>
-        <div className="NavContainer">
-          <div className="Nav">
-            <Link to="/"><img className="logo" src={logo} alt="logo"/></Link>
-            <ul>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/events">Events</Link></li>
-              <li><Link to="/gallery">Gallery</Link></li>
-              <li><Link to="/venues">Venues</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-          </div>
-        </div>
         <div onMouseEnter={this.toggleVolume} onMouseLeave={this.toggleVolume} style={videoStyle} className="Home">
           <video style={ {...videoStyle, paddingTop: '0px', overflow: 'hidden' }} src={foxtailVideo.fields.file.url} loop muted={this.state.muted} autoPlay />
           <div onClick={this.changeAudio} className={`SoundIcon${this.showVolume()}`}>

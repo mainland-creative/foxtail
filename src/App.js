@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
+  NavLink,
+  Link
 } from 'react-router-dom'
 
 import './Nav.css'
-import './App.css';
+import './App.css'
+import logo from './Foxtail_Logo_White.svg'
 
 import Home from './Home'
 import About from './About'
@@ -20,6 +23,18 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
+            <header className="NavContainer">
+              <div className="Nav">
+                <Link to="/"><img className="logo" src={logo} alt="logo"/></Link>
+                <ul>
+                  <li><NavLink to="/about">About</NavLink></li>
+                  <li><NavLink to="/events">Events</NavLink></li>
+                  <li><NavLink to="/gallery">Gallery</NavLink></li>
+                  <li><NavLink to="/venues">Venues</NavLink></li>
+                  <li><NavLink to="/contact">Contact</NavLink></li>
+                </ul>
+              </div>
+            </header>
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
             <Route path="/events" component={Events}/>

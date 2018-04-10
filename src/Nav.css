@@ -1,4 +1,8 @@
 .NavContainer {
+  display: none;
+}
+header.NavContainer {
+  display: block;
   position: fixed;
   height: 65px;
   width: 100%;
@@ -16,7 +20,7 @@
   z-index: 1000;
 }
 
-.logo {
+.Nav .logo {
   display: flex;
   height: 55px;
   padding-left: 33px;
@@ -24,7 +28,7 @@
   float: left;
 }
 
-ul {
+.Nav ul {
   display: flex;
   justify-content: flex-end;
   list-style: none;
@@ -36,20 +40,25 @@ ul {
   height: 30px;
 }
 
-a {
+.Nav a {
   text-decoration: none;
   color: #787878
 }
 
-a:hover {
+.Nav a:hover {
   color: black;
 }
 
-li {
+.Nav a.active {
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+.Nav li {
   margin-right: 100px;
   cursor: pointer;
 }
 
-ul li:nth-child(5) {
+.Nav ul li:nth-child(5) {
   margin-right: 40px
 }

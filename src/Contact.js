@@ -43,18 +43,6 @@ class Contact extends Component {
 
     return (
       <div>
-        <div className="NavContainer">
-          <div className="Nav">
-            <Link to="/"><img className="logo" src={logo} alt="logo"/></Link>
-            <ul>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/events">Events</Link></li>
-              <li><Link to="/gallery">Gallery</Link></li>
-              <li><Link to="/venues">Venues</Link></li>
-              <li><Link style={{ borderBottom: '2px solid black', color: 'black' }}to="/contact">Contact</Link></li>
-            </ul>
-          </div>
-        </div>
         <ContactContainer label={textLabel1} message={textMessage1} top />
         <PhotoContainer images={extractAssetUrls(photoContainer1)} />
         <TextContainer
