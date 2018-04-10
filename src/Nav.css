@@ -5,6 +5,9 @@
   background-color: #fff;
   z-index:1000;
 }
+.NavContainer + div {
+  padding-top: 3em !important;
+}
 
 .Nav {
   height: 65px;

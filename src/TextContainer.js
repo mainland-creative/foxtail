@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
+import Showdown from 'showdown'
 import './TextContainer.css'
 
 class TextContainer extends Component {
+  converter = new Showdown.Converter()
   render () {
     let style = {
       container: {
-        height: "400px",
+        boxSizing: "border-box",
+        padding: '1.5em 0',
+        minHeight: "400px",
         width: "100%",
         display: "flex",
         justifyContent: "center",
@@ -45,7 +49,7 @@ class TextContainer extends Component {
           {this.props.label}
         </div>
         <div style={style.message}>
-          {this.props.message}
+          <div dangerouslySetInnerHTML={{__html: this.converter.makeHtml(this.props.message)}} />
         </div>
       </div>
     </div>
