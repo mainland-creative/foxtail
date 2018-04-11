@@ -20,6 +20,10 @@ header.NavContainer {
   z-index: 1000;
 }
 
+.NavLauncher {
+  display: block;
+}
+
 .Nav .logo {
   display: flex;
   height: 55px;
@@ -30,14 +34,41 @@ header.NavContainer {
 
 .Nav ul {
   display: flex;
-  justify-content: flex-end;
+    flex-direction: column;
   list-style: none;
-  float: right;
-  align-items: center;
-  font-size: 18px;
-  letter-spacing: -0.5px;
+  position: fixed;
+    top: 0;
+    right: 0;
   color: #787878;
-  height: 30px;
+}
+
+.Nav ul.closed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Nav ul.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media (min-width: 800px) {
+  .NavLauncher {
+    display: none;
+  }
+  .Nav ul {
+    flex-direction: row;
+    float: right;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    width: 50%;
+    height: 30px;
+    position: static;
+    opacity: 1;
+    pointer-events: all;
+  }
 }
 
 .Nav a {
@@ -55,8 +86,8 @@ header.NavContainer {
 }
 
 .Nav li {
-  margin-right: 100px;
-  cursor: pointer;
+  display: block;
+  margin: 0 15% 0 0;
 }
 
 .Nav ul li:nth-child(5) {

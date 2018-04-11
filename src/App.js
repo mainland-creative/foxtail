@@ -26,6 +26,7 @@ class App extends Component {
             <header className="NavContainer">
               <div className="Nav">
                 <Link to="/"><img className="logo" src={logo} alt="logo"/></Link>
+                <button className="NavLauncher">Menu</button>
                 <ul>
                   <li><NavLink to="/about">About</NavLink></li>
                   <li><NavLink to="/events">Events</NavLink></li>
