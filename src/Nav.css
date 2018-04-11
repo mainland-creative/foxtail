@@ -21,7 +21,34 @@ header.NavContainer {
 }
 
 .NavLauncher {
-  display: block;
+  background: none;
+  border: none;
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+  width: 60px;
+}
+
+.NavLauncher > svg {
+  width: 70%;
+}
+
+.NavDismiss {
+  background: none;
+  border: none;
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+  position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 5;
+  height: 60px;
+  width: 60px;
+}
+
+.NavDismiss > svg {
+  width: 70%;
 }
 
 .Nav .logo {
@@ -32,64 +59,76 @@ header.NavContainer {
   float: left;
 }
 
-.Nav ul {
-  display: flex;
-    flex-direction: column;
+.Nav .NavLinks {
   list-style: none;
   position: fixed;
-    top: 0;
+    top: 65px;
     right: 0;
-  color: #787878;
+    bottom: 0;
+    left: 0;
+  background: #C9D0D3;
+  display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  font-size: 28px;
+  margin: 0;
+  padding: 1em 0 0 0;
+  transition: opacity .15s ease-in-out;
 }
 
-.Nav ul.closed {
+.Nav .NavLauncher[aria-expanded = false] + .NavLinks {
   opacity: 0;
   pointer-events: none;
 }
 
-.Nav ul.open {
+.Nav .NavLauncher[aria-expanded = true] + .NavLinks {
   opacity: 1;
   pointer-events: all;
 }
 
-@media (min-width: 800px) {
+.Nav a { 
+  color: #000000;
+  text-decoration: none;
+}
+
+.Nav a.active {
+  color: #000000;
+  border-bottom: 2px solid black;
+}
+
+@media (min-width: 700px) {
   .NavLauncher {
     display: none;
   }
-  .Nav ul {
+  .NavDismiss {
+    display: none;
+  }
+  .Nav .NavLauncher[aria-expanded] + .NavLinks {
+    background: none;
     flex-direction: row;
     float: right;
     justify-content: flex-end;
     align-items: center;
     font-size: 18px;
+    height: 65px;
     letter-spacing: -0.5px;
     width: 50%;
-    height: 30px;
+    padding: 0;
+    margin: 0;
     position: static;
     opacity: 1;
     pointer-events: all;
   }
-}
-
-.Nav a {
-  text-decoration: none;
-  color: #787878
-}
-
-.Nav a:hover {
-  color: black;
-}
-
-.Nav a.active {
-  color: black;
-  border-bottom: 2px solid black;
-}
-
-.Nav li {
-  display: block;
-  margin: 0 15% 0 0;
-}
-
-.Nav ul li:nth-child(5) {
-  margin-right: 40px
+  .Nav a {
+    color: #787878
+  }
+  
+  .Nav a:hover {
+    color: black;
+  }
+  
+  .Nav li {
+    display: block;
+    margin: 0 15% 0 0;
+  }
 }
