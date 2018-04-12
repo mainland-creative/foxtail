@@ -115,8 +115,11 @@ class ContactContainer extends Component {
     const style = {
       container: {
         display: "flex",
-        height: this.props.top ? "585px" : "650px",
+        flexDirection: "column",
         paddingTop:  this.props.top ? "65px" : "0px",
+        "@media (min-width: 1200px)": {
+          flexDirection: "row"
+        }
       },
       textItem: {
         display: "flex",
@@ -135,12 +138,15 @@ class ContactContainer extends Component {
       textMessage: {
         fontSize: "18px",
         flex: 2,
+        margin: "2em auto",
+        maxWidth: "30em",
         padding: "0 36px 0 36px"
       },
       formItem: {
         display: "flex",
         flex: 2,
-        flexDirection: "column"
+        flexDirection: "column",
+        minHeight: "35em"
       },
       nameInput: {
         display: "flex",
@@ -150,7 +156,7 @@ class ContactContainer extends Component {
       },
       flexRow: {
         display: "flex",
-        height: "50%",
+        flex: 1,
         fontSize: "18px",
         color: "#999999"
       },
@@ -160,6 +166,7 @@ class ContactContainer extends Component {
         flex: 1,
       },
       textArea: {
+        minHeight: "5em",
         height: "95%",
         width: "560px",
         marginLeft: "40px",
