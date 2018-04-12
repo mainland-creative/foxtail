@@ -46,7 +46,7 @@ class TeamContainer extends Component {
       rowContainer: {
         display: "flex",
         flex: 1,
-        justifyContent: "space-around",
+        justifyContent: "space-evenly",
         alignItems: "center",
         flexWrap: "wrap",
       },
