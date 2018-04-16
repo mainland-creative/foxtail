@@ -151,14 +151,17 @@ class ContactContainer extends Component {
       nameInput: {
         display: "flex",
         flexDirection: "column",
-        height: "20%",
-        zIndex: 1000
+        padding: '1em 2em',
       },
       flexRow: {
+        color: "#999999",
         display: "flex",
-        flex: 1,
+        flexDirection: "column",
         fontSize: "18px",
-        color: "#999999"
+        padding: '1em 0 1em 0',
+        "@media (min-width: 800px)": {
+          flexDirection: "row"
+        }
       },
       flexRowItem: {
         display: "flex",
@@ -166,14 +169,17 @@ class ContactContainer extends Component {
         flex: 1,
       },
       textArea: {
-        minHeight: "5em",
+        minHeight: "10em",
         height: "95%",
-        width: "560px",
-        marginLeft: "40px",
+        width: "auto",
+        maxWidth: "560px",
         fontSize: "18px",
         color: "#999999",
         resize: "none",
-        outline: "none"
+        outline: "none",
+        "@media (min-width: 800px)": {
+          width: "560px"
+        }
       },
       label: {
         textAlign: "left"
@@ -202,8 +208,8 @@ class ContactContainer extends Component {
         <div style={style.formItem}>
           {this.renderMessage()}
           <div style={style.flexRowItem}>
-            <div style={{ ...style.flexRow, alignItems: "flex-end" }}>
-              <div style={{ ...style.nameInput, paddingLeft: "60px", paddingRight: "40px" }}>
+            <div style={{ ...style.flexRow }}>
+              <div style={{ ...style.nameInput }}>
                 <span style={style.label}>Name</span>
                 <input ref={el => this.inputName = el} onChange={this.handleChangeName} style={style.input} type="text"/>
               </div>
@@ -212,15 +218,15 @@ class ContactContainer extends Component {
                 <input ref={el => this.inputEmail = el} onChange={this.handleChangeEmail} style={style.input} type="text"/>
               </div>
             </div>
-            <div style={{ ...style.flexRow, alignItems: "center" }}>
-              <div style={{ ...style.nameInput, paddingLeft: "60px" }}>
+            <div style={{ ...style.flexRow }}>
+              <div style={{ ...style.nameInput, paddingLeft: "2em" }}>
                 <span style={style.label}>Subject</span>
                 <input ref={el => this.inputSubject = el}onChange={this.handleChangeSubject} style={style.input} type="text"/>
               </div>
             </div>
           </div>
           <div style={style.flexRowItem}>
-            <div style={{ ...style.flexRow, alignItems: "flex-end", height: "100%", marginBottom: "70px" }}>
+            <div style={{ ...style.flexRow, margin: "0 2em" }}>
               <textarea ref={el => this.inputMessage = el} style={style.textArea} placeholder="Message" onChange={this.handleChangeBody}/>
               <div onClick={this.submit} style={style.submit} onMouseEnter={this.changeArrowToBlack} onMouseLeave={this.changeArrowToGrey}>
                 <span style={style.label}>Submit</span>
