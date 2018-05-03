@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Radium from 'radium'
 import { chunk } from 'lodash'
 
 class TeamContainer extends Component {
@@ -121,4 +122,4 @@ class TeamContainer extends Component {
   }
 }
 
-export default TeamContainer
+export default Radium(TeamContainer)
