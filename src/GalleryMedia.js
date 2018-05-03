@@ -130,8 +130,8 @@ class GalleryMedia extends Component {
                        key={i.label} style={style.more}
                        onMouseEnter={this.state.arrows[i.label].black}
                        onMouseLeave={this.state.arrows[i.label].grey}>
-                       <div style={{ float: "left", paddingRight: "24px" }}>View More</div>
-                       <img style={{ marginTop: "-5px" }} src={this.state[i.label.toLowerCase()]} alt="more" />
+                       <div style={{ paddingRight: "24px" }}>View More</div>
+                       <img src={this.state[i.label.toLowerCase()]} alt="more" />
                      </Link>
                    </div>
                  </div>
@@ -170,24 +170,28 @@ class GalleryMedia extends Component {
         display: "flex",
         flexDirection: "column",
         height: "80%",
-        width: "600px",
-        minWidth: "500px",
+        width: "100%",
         paddingTop: this._setRowItemPadding(),
+        "@media (min-width: 640px)": {
+          width: "600px",
+        }
       },
       itemInfo: {
+        boxSizing: "border-box",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
-        flex: 1,
+        padding: "0 1.25em",
+        "@media (min-width: 600px)": {
+          padding: "0",
+        }
       },
       itemInfoLabel: {
         paddingTop: "20px",
-        flex: 1,
         fontSize: "34px",
-        fontColor: "black",
+        color: "black",
       },
       itemInfoMore: {
-        flex: 1,
         color: "#999999",
       },
       itemImage: {
@@ -197,8 +201,16 @@ class GalleryMedia extends Component {
       },
       more: {
         cursor: "pointer",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        color: "#787878",
+        textDecoration: "none",
         ':hover': {
           color: "black"
+        },
+        "@media (max-width: 599px)": {
+          padding: '0 1em',
         }
       }
     }
