@@ -98,6 +98,7 @@ class MultiMixedContainer extends Component {
         color: "#fff"
       },
       message: {
+        boxSizing: "border-box",
         display: "block",
         fontSize: "18px",
         width: "100%",
