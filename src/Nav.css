@@ -10,7 +10,7 @@ header.NavContainer {
   z-index:1000;
 }
 .NavContainer + div {
-  padding-top: 3em !important;
+  padding-top: 4.0625rem !important; /* 16px -> 65px */
 }
 
 .Nav {

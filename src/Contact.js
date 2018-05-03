@@ -43,7 +43,7 @@ class Contact extends Component {
 
     return (
       <div>
-        <ContactContainer label={textLabel1} message={textMessage1} top />
+        <ContactContainer label={textLabel1} message={textMessage1} />
         <PhotoContainer images={extractAssetUrls(photoContainer1)} />
         <TextContainer
           bgColor="#C7D0D4"
