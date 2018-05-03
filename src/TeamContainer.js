@@ -55,8 +55,11 @@ class TeamContainer extends Component {
         flexDirection: "column",
         height: "30em",
         width: "415px",
-        minWidth: "350px",
-        marginBottom: "50px"
+        marginBottom: "50px",
+        '@media (min-width: 440px)': {
+          minWidth: "300px",
+
+        }
       },
       itemInfo: {
         fontSize: "34px",
