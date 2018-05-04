@@ -24,23 +24,6 @@ class Events extends Component {
     this.setState({ data: model.items[0].fields })
   }
 
-  renderNav () {
-    return (
-      <div className="NavContainer">
-        <div className="Nav">
-          <Link to="/"><img className="logo" src={logo} alt="logo"/></Link>
-          <ul>
-            <li><Link to="/about">About</Link></li>
-            <li><Link style={{ borderBottom: '2px solid black', color: 'black' }}to="/events">Events</Link></li>
-            <li><Link to="/gallery">Gallery</Link></li>
-            <li><Link to="/venues">Venues</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
-        </div>
-      </div>
-    )
-  }
-
   render () {
     if (!this.state.data) return null
 
@@ -73,8 +56,6 @@ class Events extends Component {
 
     return (
       <div>
-        {this.renderNav()}
-
         <TextContainer
           bgColor="#C7D0D4"
           label={headingLabel}

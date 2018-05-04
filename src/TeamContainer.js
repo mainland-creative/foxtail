@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Radium from 'radium'
 import { chunk } from 'lodash'
 
 class TeamContainer extends Component {
@@ -46,7 +47,7 @@ class TeamContainer extends Component {
       rowContainer: {
         display: "flex",
         flex: 1,
-        justifyContent: "space-around",
+        justifyContent: "space-evenly",
         alignItems: "center",
         flexWrap: "wrap",
       },
@@ -54,9 +55,12 @@ class TeamContainer extends Component {
         display: "flex",
         flexDirection: "column",
         height: "30em",
-        width: "415px",
-        minWidth: "350px",
-        marginBottom: "50px"
+        width: "100%",
+        marginBottom: "50px",
+        '@media (min-width: 440px)': {
+          minWidth: "300px",
+          width: "415px",
+        }
       },
       itemInfo: {
         fontSize: "34px",
@@ -118,4 +122,4 @@ class TeamContainer extends Component {
   }
 }
 
-export default TeamContainer
+export default Radium(TeamContainer)

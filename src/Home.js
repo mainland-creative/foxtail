@@ -48,32 +48,19 @@ class Home extends Component {
 
   render () {
     if (!this.state.data) return null
-    const { foxtailVideo } = this.state.data
+    const { foxtailVideo, videoPoster } = this.state.data
 
     const videoStyle = {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      paddingTop: '65px',
       height: document.documentElement.clientHeight - 65,
       width: document.documentElement.clientWidth
     }
 
     return (
       <div>
-        <div className="NavContainer">
-          <div className="Nav">
-            <Link to="/"><img className="logo" src={logo} alt="logo"/></Link>
-            <ul>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/events">Events</Link></li>
-              <li><Link to="/gallery">Gallery</Link></li>
-              <li><Link to="/venues">Venues</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-          </div>
-        </div>
         <div onMouseEnter={this.toggleVolume} onMouseLeave={this.toggleVolume} style={videoStyle} className="Home">
-          <video style={ {...videoStyle, paddingTop: '0px', overflow: 'hidden' }} src={foxtailVideo.fields.file.url} loop muted={this.state.muted} autoPlay />
+          <video style={ {...videoStyle, paddingTop: '0px', overflow: 'hidden' }} src={foxtailVideo.fields.file.url} poster={videoPoster.fields.file.url} loop muted={this.state.muted} autoPlay />
           <div onClick={this.changeAudio} className={`SoundIcon${this.showVolume()}`}>
             <img style={{ height: '30px', width: '30px' }} src={this.state.muted ? mute : volume }></img>
           </div>

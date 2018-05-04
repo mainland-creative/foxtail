@@ -33,7 +33,8 @@ class Carosel extends Component {
         width: '200px',
         fontSize: '50px',
         color: '#fff',
-        left: '0%',
+        left: '0',
+        bottom: '0',
         marginTop: '18px',
         marginLeft: '-10px'
       }

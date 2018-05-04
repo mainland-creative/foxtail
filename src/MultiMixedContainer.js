@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Carosel from './Carosel'
+import Radium from 'radium'
 
 class MultiMixedContainer extends Component {
   constructor(props) {
@@ -55,40 +56,51 @@ class MultiMixedContainer extends Component {
   render () {
     const style =  {
       container: {
-        height: "800px",
-        display: "flex",
+        display: "block",
+        '@media (min-width: 900px)': {
+          height: "auto",
+          display: "flex",
+          flexDirection: "row",
+        }
       },
       stackedBoxes: {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        flex: "1",
+        flex: "1 1 100%",
+        '@media (min-width: 900px)': {
+          flex: "1 1 33%",
+        },
       },
       box: {
         display: "flex",
         alignItems: "center",
         justfyContent: "center",
         flexDirection: "column",
-        flex: "1",
+        padding: "2em 0",
         width: "100%",
       },
       images: {
-        display: "flex",
-        flex: "2",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        display: "block",
+        minHeight: '650px',
+        '@media (min-width: 900px)': {
+          display: "flex",
+          flex: "2 2 66%",
+        }
       },
       label: {
-        display: "flex",
+        display: "block",
         alignItems: "center",
         fontSize: "70px",
-        flex: 1,
         color: "#fff"
       },
       message: {
+        boxSizing: "border-box",
+        display: "block",
         fontSize: "18px",
-        flex: 1,
         width: "100%",
         paddingLeft: "20px",
         paddingRight: "20px"
@@ -137,4 +149,4 @@ class MultiMixedContainer extends Component {
   }
 }
 
-export default MultiMixedContainer
+export default Radium(MultiMixedContainer)

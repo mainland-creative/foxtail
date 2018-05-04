@@ -44,23 +44,6 @@ class About extends Component {
     })
   }
 
-  renderNav () {
-    return (
-      <div className="NavContainer">
-        <div className="Nav">
-          <Link to="/"><img className="logo" src={logo} alt="logo"/></Link>
-          <ul>
-            <li><Link style={{ borderBottom: '2px solid black', color: 'black' }}to="/about">About</Link></li>
-            <li><Link to="/events">Events</Link></li>
-            <li><Link to="/gallery">Gallery</Link></li>
-            <li><Link to="/venues">Venues</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
-        </div>
-      </div>
-    )
-  }
-
   render () {
     if (!this.state.data) return null
 
@@ -87,7 +70,6 @@ class About extends Component {
 
     return (
       <div>
-        {this.renderNav()}
         <TextContainer
           label={headingLabel}
           bgColor="#F2EAE9"

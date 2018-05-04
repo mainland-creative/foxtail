@@ -57,37 +57,39 @@ class MixedContainer extends Component {
     const dots = {
       solidDot: {
         position: 'absolute',
+        right: '30%',
         background: "#999999",
         width: "24px",
         height: "24px",
         borderRadius: "50%",
-        marginLeft: "391px",
+        marginRight: "14px",
         marginTop: "-79px"
       },
       smallRing: {
         position: 'absolute',
+        right: '30%',
         background: "transparent",
         border: "2px solid #e5e5e5",
         width: "38px",
         height: "38px",
         borderRadius: "50%",
-        marginLeft: "382px",
+        marginRight: "6px",
         marginTop: "-87px"
       },
       largeRing: {
         position: 'absolute',
+        right: '30%',
         background: "transparent",
         border: "2px solid #e5e5e5",
         width: "50px",
         height: "50px",
         borderRadius: "50%",
-        marginLeft: "376px",
         marginTop: "-93px"
       }
     }
     if (!this.props.map) return null
     return(
-      <div style={{display: 'inline', width: "100%", height: "100%"}}>
+      <div style={{display: 'inline', width: "100%", height: "100%", position: "relative"}}>
         <div style={dots.solidDot}></div>
         <div style={dots.smallRing}></div>
         <div style={dots.largeRing}></div>

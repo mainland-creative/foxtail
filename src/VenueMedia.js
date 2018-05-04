@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Radium from 'radium'
 import { chunk } from 'lodash'
 import { extractAssetUrls } from './CMS'
 
@@ -59,24 +60,30 @@ class VenuesContainer extends Component {
         alignItems: "center",
       },
       rowItem: {
+        color: "#777777",
         display: "flex",
         flexDirection: "column",
         height: "80%",
-        width: "640px",
-        minWidth: "500px",
         paddingTop: "50px",
         cursor: "pointer",
+        width: "100%",
+        textDecoration: "none",
+        '@media (min-width: 660px)': {
+          width: "640px",
+          minWidth: "500px",
+        },
       },
       itemInfo: {
         fontSize: "34px",
         paddingTop: "20px",
-        textAlign: "left"
+        textAlign: "left",
+        "@media (max-width: 659px)": {
+          paddingLeft: "1.25rem",
+        }
       },
       itemInfoLabel: {
         paddingTop: "20px",
-        flex: 1,
         fontSize: "34px",
-        fontColor: "black",
       },
       itemImage: {
         flex: 4,
@@ -121,4 +128,4 @@ class VenuesContainer extends Component {
   }
 }
 
-export default VenuesContainer
+export default Radium(VenuesContainer)
