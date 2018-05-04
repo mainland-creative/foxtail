@@ -87,14 +87,6 @@ class MixedContainer extends Component {
         marginTop: "-93px"
       }
     }
-    if (!this.props.map) return null
-    return(
-      <div style={{display: 'inline', width: "100%", height: "100%", position: "relative"}}>
-        <div style={dots.solidDot}></div>
-        <div style={dots.smallRing}></div>
-        <div style={dots.largeRing}></div>
-      </div>
-    )
   }
 
   render () {
@@ -145,11 +137,9 @@ class MixedContainer extends Component {
 
     const buildLabel = function (opts) {
       if (!opts.label) return
-      return (
-        <div className="LabelMixed">
-          {opts.label}
-        </div>
-      )
+      return <div className="LabelMixed">
+        {opts.label}
+      </div>
     }
     if (this.props.left.message) {
       if (this.props.left.bgColor) {

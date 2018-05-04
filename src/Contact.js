@@ -38,7 +38,8 @@ class Contact extends Component {
       photoContainer1,
       textLabel2,
       textMessage2,
-      testMessage3
+      testMessage3,
+      mapImage
     } = this.state.data
 
     return (
@@ -53,9 +54,7 @@ class Contact extends Component {
 
         <MixedContainer
           left={{ message: testMessage3}}
-          images={
-            ['https://user-images.githubusercontent.com/1156704/27988125-5259c720-63cf-11e7-9f00-6fe8fa2770fa.png']
-          }
+          images={[mapImage.fields.file.url]}
           right={[]}
           map
         />
