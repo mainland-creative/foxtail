@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Play Button</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M40,80 C17.90861,80 0,62.09139 0,40 C0,17.90861 17.90861,0 40,0 C62.09139,0 80,17.90861 80,40 C80,62.09139 62.09139,80 40,80 Z M56.6514111,41.9527607 C57.4894571,41.3532015 59.4070371,40.1058674 56.7412558,38.3318168 C54.0754745,36.5577663 34.8970167,22.7766376 33.3902663,21.7036878 C31,20.0015904 31,21.7036878 31,23.4595377 C31,45.4876087 31,56.9001327 31,57.6971097 C31,58.953627 32.1159253,59.3267237 33.1132682,58.705296 C33.7431193,58.3128462 55.813365,42.5523199 56.6514111,41.9527607 Z" id="Play-Button" fill="#FFFFFF"></path>
+    </g>
+</svg>
