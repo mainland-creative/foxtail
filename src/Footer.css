@@ -63,6 +63,10 @@
   color: #fff;
 }
 
+.Body > p, .BodyContact > p {
+  margin-top: 0;
+}
+
 .LabelContact {
   font-size: 18px;
   color: #999999;
