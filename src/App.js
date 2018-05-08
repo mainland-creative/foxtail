@@ -8,7 +8,7 @@ import {
 
 import './Nav.css'
 import './App.css'
-import logo from './Foxtail_Logo_White.svg'
+import logo from './foxtail_navigation_logo.svg'
 
 import Home from './Home'
 import About from './About'
