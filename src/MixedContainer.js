@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Carosel from './Carosel'
+import Showdown from 'showdown'
 import './MixedContainer.css'
 
 class MixedContainer extends Component {
@@ -125,8 +126,10 @@ class MixedContainer extends Component {
     }
 
     const buildMessage = function (messages) {
+      const converter = new Showdown.Converter()
+
       if (typeof messages === 'string') {
-        return <p>{messages}</p>
+        return <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(messages)}} />
       }
       if (messages[0] === "newline") {
         return messages.slice(1).map(m => <div key={m.toString()}>{m}</div>)

@@ -94,7 +94,7 @@ class Events extends Component {
           message={textMessage3}
         />
         <MixedContainer
-          left={ { label: mixedLabel3, message: [mixedMessage3, mixedMessage3_5] } }
+          left={ { label: mixedLabel3, message: mixedMessage3 } }
           images={extractAssetUrls(mixedPhoto3)}
           right={[]}
         />
