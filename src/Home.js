@@ -44,7 +44,6 @@ class Home extends Component {
 
   toggleVolume = () => {
     const showVolume = this.state.showVolume
-    console.log('showVolume = ', showVolume)
     this.setState({ showVolume : !this.state.showVolume })
   }
 
@@ -90,7 +89,7 @@ class Home extends Component {
       <div>
         <div onMouseEnter={this.toggleVolume} onMouseLeave={this.toggleVolume} style={videoStyle} className="Home">
           <img src={playButton} alt='Toggle Playback' style={playButtonStyle} />
-          <video style={ {...videoStyle, paddingTop: '0px', overflow: 'hidden' }} src={foxtailVideo.fields.file.url} poster={videoPoster.fields.file.url} loop muted={this.state.muted} autoPlay ref={this.videoRef} onClick={this.toggleVideoPlayback} />
+          <video style={ {...videoStyle, paddingTop: '0px', overflow: 'hidden' }} src={foxtailVideo.fields.file.url} poster={videoPoster.fields.file.url} loop muted={this.state.muted} autoPlay playsInline ref={this.videoRef} onClick={this.toggleVideoPlayback} />
           <div onClick={this.changeAudio} className={`SoundIcon${this.showVolume()}`}>
             <img style={{ height: '30px', width: '30px' }} src={this.state.muted ? mute : volume }></img>
           </div>

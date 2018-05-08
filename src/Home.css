@@ -1,8 +1,12 @@
 .Home {
   background-size: cover;
+  background-repeat: no-repeat;
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .SoundIcon {
