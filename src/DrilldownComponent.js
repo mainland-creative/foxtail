@@ -85,7 +85,7 @@ class DrilldownComponent extends Component {
             <div style={style.label}>Gallery</div>
             <div style={style.subNav}>
               <ul style={style.subNavList}>
-                <li style={style.navItem}><Link style={style.navItem} to="/gallery/plated">Plated</Link></li>
+                <li style={style.navItem}><Link style={style.navLink} to="/gallery/plated">Plated</Link></li>
                 <img style={style.line} src={line} alt="line"/>
                 <li style={style.navItem}><Link style={{borderBottom: '2px solid', ...style.navLink}} to="/gallery/passed">Passed</Link></li>
                 <img style={style.line} src={line} alt="line"/>
