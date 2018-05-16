@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import Radium from 'radium'
+import Showdown from 'showdown'
 
 import ArrowGrey from './gallery_more.png'
 import ArrowBlack from'./gallery_more_black.png'
@@ -112,6 +113,7 @@ class ContactContainer extends Component {
   }
 
   render () {
+    const converter = new Showdown.Converter()
     const style = {
       container: {
         display: "flex",
@@ -203,7 +205,7 @@ class ContactContainer extends Component {
       <div style={style.container}>
         <div style={style.textItem}>
           <div style={style.textLabel}>{this.state.label}</div>
-          <div style={style.textMessage}>{this.state.message}</div>
+          <div style={style.textMessage} dangerouslySetInnerHTML={{ __html: converter.makeHtml(this.state.message)}} />
         </div>
         <div style={style.formItem}>
           {this.renderMessage()}

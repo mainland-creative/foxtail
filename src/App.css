@@ -10,3 +10,7 @@
   font-family: 'Foxtail', sans-serif;
   line-height: 1.8;
 }
+
+p a, li a {
+  color: #777;
+}
