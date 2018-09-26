@@ -7,6 +7,7 @@ class TeamContainer extends Component {
     super(props)
     this.state = {
       members: this.props.members || [],
+      photos: this.props.photos || [],
       viewport: {
         width: document.documentElement.clientWidth,
         height: document.documentElement.clientHeight
@@ -97,14 +98,14 @@ class TeamContainer extends Component {
       }
     }
 
-    const buildRows = function (members, width) {
+    const buildRows = function (members, photos, width) {
       if (members.length === 0) return null
 
       return <div style={style.rowContainer}>
           {members.map((m, idx) => {
             return (
               <div style={style.rowItem} key={idx}>
-                <div style={{...style.itemImage, backgroundImage: `url(${m.img})`}}></div>
+                <div style={{...style.itemImage, backgroundImage: `url(${photos[m.img].fields.file.url})`}}></div>
                 <div style={style.itemInfo}>{m.name}</div>
                 <div style={style.itemInfoSecondary}>{m.title}</div>
               </div>
@@ -116,7 +117,7 @@ class TeamContainer extends Component {
 
     return (
       <div style={style.container}>
-        {buildRows(this.state.members || [], this.state.viewport.width)}
+        {buildRows(this.state.members || [], this.state.photos || [], this.state.viewport.width)}
       </div>
     )
   }

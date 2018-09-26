@@ -47,12 +47,16 @@ class ContactContainer extends Component {
       return
     }
 
+    // If the fake text field to catch rogue scripts isn’t empty, abort submission.
+    if ( this.inputValid.value !== '' ) return
+
     const { body, email, name, subject } = this.state
-    const payload = { message: body, email, name, subject }
-    const resp = await axios.post('https://foxtailapi-dhwcqoxfuf.now.sh/email', payload)
+    const payload = { body: body, email: email, name: name, subject: subject }
+    const serviceUrl = window.location.hostname !== 'staging.foxtailcatering.com' ? 'http://staging.foxtailcatering.com/svc/cntctsvc.php' : 'http://foxtailcatering.com/svc/cntctsvc.php'
+    const resp = await axios.post('http://staging.foxtailcatering.com/svc/cntctsvc.php', payload)
 
     if (resp.status >= 200) {
-      this.clearForm('Thanks! We\'ll be in touch.')
+      this.clearForm('Thanks! We’ll be in touch.')
     } else {
       this.setState({ formError: "Something went wrong, please try again." })
       this.deferStateFieldRemoval('formError', 3000)
@@ -66,6 +70,7 @@ class ContactContainer extends Component {
     this.inputEmail.value = ""
     this.inputSubject.value = ""
     this.inputMessage.value = ""
+    this.inputValid.value = ""
     if (message) {
       this.setState({ formError: message })
       this.deferStateFieldRemoval('formError', 3000)
@@ -97,7 +102,6 @@ class ContactContainer extends Component {
   renderMessage () {
     const style = {
       message: {
-        position: 'absolute',
         paddingLeft: '55px',
         paddingTop: '80px',
         zIndex: '1000'
@@ -235,6 +239,7 @@ class ContactContainer extends Component {
                 <img style={{ marginBottom: "-8px", marginLeft: "20px" }}src={this.state.arrow} alt="arrow"/>
               </div>
             </div>
+            <input style={{ position: 'absolute', left: '-10000px' }} name="valid" value="" ref={el => this.inputValid = el} />
           </div>
         </div>
       </div>

@@ -65,7 +65,8 @@ class About extends Component {
       mixedMessage2,
       textLabel3,
       textMessage3,
-      teamList
+      teamList,
+      staffPhotos
     } = this.state.data
 
     return (
@@ -115,7 +116,7 @@ class About extends Component {
           label={textLabel3}
           message={textMessage3}
         />
-        <TeamContainer members={teamList.members} />
+        <TeamContainer members={teamList.members} photos={staffPhotos} />
         <Footer />
       </div>
     )
