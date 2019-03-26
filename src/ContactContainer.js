@@ -50,9 +50,9 @@ class ContactContainer extends Component {
     // If the fake text field to catch rogue scripts isn’t empty, abort submission.
     if ( this.inputValid.value !== '' ) return
 
-    const { body, email, name, subject } = this.state
-    const payload = { body: body, email: email, name: name, subject: subject }
-    const serviceUrl = (window.location.hostname === 'staging.foxtailcatering.com') ? 'http://staging.foxtailcatering.com/svc/cntctsvc.php' : 'http://foxtailcatering.com/svc/cntctsvc.php'
+    const { body, email, name, subject } = this.state;
+    const payload = { body: body, email: email, name: name, subject: subject };
+    const serviceUrl = (window.location.hostname !== 'staging.foxtailcatering.com') ? 'http://staging.foxtailcatering.com/svc/cntctsvc.php' : 'http://foxtailcatering.com/svc/cntctsvc.php';
     const resp = await axios.post(serviceUrl, payload);
 
     if (resp.status >= 200) {
@@ -60,7 +60,7 @@ class ContactContainer extends Component {
     } else if (resp.status >= 400 || resp.status < 200) {
       this.setState({ formError: "Something went wrong, please try again." });
       this.deferStateFieldRemoval('formError', 3000);
-      return
+      return;
     }
   }
 
