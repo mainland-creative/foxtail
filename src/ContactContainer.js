@@ -52,14 +52,16 @@ class ContactContainer extends Component {
 
     const { body, email, name, subject } = this.state
     const payload = { body: body, email: email, name: name, subject: subject }
-    const serviceUrl = window.location.hostname !== 'staging.foxtailcatering.com' ? 'http://staging.foxtailcatering.com/svc/cntctsvc.php' : 'http://foxtailcatering.com/svc/cntctsvc.php'
-    const resp = await axios.post('http://staging.foxtailcatering.com/svc/cntctsvc.php', payload)
+    const serviceUrl = 'http://localhost:3001/public/svc/cntctsvc.php';
+    const resp = await axios.post('http://localhost:3001/public/svc/cntctsvc.php', payload);
 
     if (resp.status >= 200) {
-      this.clearForm('Thanks! We’ll be in touch.')
-    } else {
-      this.setState({ formError: "Something went wrong, please try again." })
-      this.deferStateFieldRemoval('formError', 3000)
+      this.clearForm('Thanks! We’ll be in touch.');
+      console.log(serviceUrl);
+    } else if (resp.status >= 400 || resp.status < 200) {
+      console.log(serviceUrl);
+      this.setState({ formError: "Something went wrong, please try again." });
+      this.deferStateFieldRemoval('formError', 3000);
       return
     }
   }

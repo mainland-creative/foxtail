@@ -28,7 +28,7 @@ if ($data && $data->email && $data->name && $data->body) {
 
 EOL;
 
-  mail('dan@goodthings.io', 'New message from the Foxtail website contact form', $output_message, "From: $from");
+  mail('sara@mainlandcreative.com', 'New message from the Foxtail website contact form', $output_message, "From: $from");
 
   echo json_encode(array('status' => 'ok'));
 } else {

@@ -2,6 +2,11 @@
   "name": "foxtail",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+    "/public/svc": {
+      "target": "http://localhost:3001"
+    }
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "contentful": "^6.1.0",
