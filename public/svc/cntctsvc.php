@@ -22,6 +22,8 @@ if ($data && $data->email && $data->name && $data->body) {
   
   Subject: {$subject}
 
+  Name: {$name}
+
   Message:
 
   {$message}
