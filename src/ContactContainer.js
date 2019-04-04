@@ -36,7 +36,17 @@ class ContactContainer extends Component {
     this.setState({ arrow: ArrowBlack })
   }
 
+
   async submit () {
+
+    const emailField = document.querySelector("#email-field");
+    const isValid = emailField.checkValidity();
+    if (!isValid) {
+      this.setState({ formError: "Please enter a valid email address." })
+      this.deferStateFieldRemoval('formError', 4000)
+      return
+    };
+
     const validatedFields = ['name', 'email', 'subject', 'body'].filter((field) => {
       if (this.state[field].length <= 0) return true
     })
@@ -50,17 +60,20 @@ class ContactContainer extends Component {
     // If the fake text field to catch rogue scripts isn’t empty, abort submission.
     if ( this.inputValid.value !== '' ) return
 
-    const { body, email, name, subject } = this.state
-    const payload = { body: body, email: email, name: name, subject: subject }
-    const serviceUrl = window.location.hostname !== 'staging.foxtailcatering.com' ? 'http://staging.foxtailcatering.com/svc/cntctsvc.php' : 'http://foxtailcatering.com/svc/cntctsvc.php'
-    const resp = await axios.post('http://staging.foxtailcatering.com/svc/cntctsvc.php', payload)
+    const { body, email, name, subject } = this.state;
+    const payload = { body: body, email: email, name: name, subject: subject };
+    const serviceUrl = (window.location.hostname !== 'staging.foxtailcatering.com') ? 'http://staging.foxtailcatering.com/svc/cntctsvc.php' : 'http://foxtailcatering.com/svc/cntctsvc.php';
 
-    if (resp.status >= 200) {
-      this.clearForm('Thanks! We’ll be in touch.')
-    } else {
-      this.setState({ formError: "Something went wrong, please try again." })
-      this.deferStateFieldRemoval('formError', 3000)
-      return
+    try {
+      const resp = await axios.post(serviceUrl, payload);
+      if (resp.status >= 200 && resp.status < 400) {
+        this.clearForm('Thanks! We’ll be in touch.');
+      }
+    } catch (error) {
+      console.error(error);
+      this.setState({ formError: "Something went wrong, please try again." });
+      this.deferStateFieldRemoval('formError', 3000);
+      return;
     }
   }
 
@@ -221,7 +234,7 @@ class ContactContainer extends Component {
               </div>
               <div style={style.nameInput}>
                 <span style={style.label}>Email</span>
-                <input ref={el => this.inputEmail = el} onChange={this.handleChangeEmail} style={style.input} type="text"/>
+                <input id="email-field" ref={el => this.inputEmail = el} onChange={this.handleChangeEmail} style={style.input} type="email"/>
               </div>
             </div>
             <div style={{ ...style.flexRow }}>
